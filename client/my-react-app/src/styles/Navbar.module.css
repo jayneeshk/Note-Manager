@@ -1,0 +1,93 @@
+/* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc); /* Gradient Background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  
+  /* Brand (Website Name) */
+  .navbarBrand h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Navbar links container */
+  .navbarLinks {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .navbarLinks li {
+    position: relative;
+  }
+  
+  /* Navbar links */
+  .navbarLinks a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Hover effects for links */
+  .navbarLinks a:hover {
+    color: #2575fc; /* Highlight color */
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+  }
+  
+  /* Hamburger icon for smaller screens */
+  .hamburger {
+    display: none;
+    font-size: 26px;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+  
+    .navbarLinks {
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: linear-gradient(90deg, #6a11cb, #2575fc);
+      width: 100%;
+      display: none;
+      gap: 15px;
+      padding: 20px 0;
+    }
+  
+    .navbarLinks.active {
+      display: flex;
+    }
+  
+    .navbarLinks a {
+      padding: 10px 20px;
+      font-size: 18px;
+    }
+  }
+  

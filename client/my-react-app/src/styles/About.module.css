@@ -1,0 +1,21 @@
+/* src/styles/About.module.css */
+
+.aboutContainer {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .aboutContainer h1 {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .aboutContainer p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
