@@ -20,7 +20,7 @@ const Login = ({ setIsLoggedIn }) => {
       const { token } = response.data;
       localStorage.setItem('token', token); // Store token in localStorage
       setIsLoggedIn(true); // Update the logged-in state
-      navigate("/notes"); // Redirect to notes page
+      navigate("/create"); // Redirect to notes page
     } catch (err) {
       // If error occurs, display the error message
       setErrorMessage(err.response?.data?.message || 'Error logging in');

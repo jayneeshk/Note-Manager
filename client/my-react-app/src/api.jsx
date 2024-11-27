@@ -9,8 +9,9 @@ const api = axios.create({
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
   if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
+    config.headers.Authorization = token;
   }
+  console.log('Token in interceptor:', token);
   return config;
 });
 
@@ -33,6 +34,7 @@ export const fetchNotes = async () => {
 
 export const createNote = async (note) => {
     try {
+      console.log('Note: ', note)
       const response = await api.post('/api/notes', note);  // The token will be sent automatically due to interceptor
       return response.data;
     } catch (error) {

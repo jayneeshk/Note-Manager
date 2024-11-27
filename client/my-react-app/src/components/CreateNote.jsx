@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { createNote } from "../api";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";  
 
 const CreateNote = () => {
   const [title, setTitle] = useState("");
@@ -12,7 +13,33 @@ const CreateNote = () => {
     e.preventDefault();
 
     try {
-      const response = await createNote(title, content, token);
+      console.log('Title: ', title);
+      console.log('Content: ', content);
+      const note = {
+        "title": title,
+        "content": content
+      }
+      const response = await createNote(note);
+      // const response = await createNote({
+      //   "title": "testmail",
+      //   "content": "kskfk"
+      // })
+      // console.log('token at frontend ', token);
+      // const response = await axios.post(
+      //   "http://localhost:5000/api/notes",
+      //   {
+      //     title: "akdsjaks",
+      //     content: "sadkjasd"
+      //   },
+      //   {
+      //     headers: {
+      //       Authorization: token // Replace this with your token logic
+      //     }
+      //   }
+      // );
+      
+      // console.log(response.data);
+      
       navigate("/notes"); // Redirect to notes page after successful creation
     } catch (error) {
       console.error("Error creating note", error);
